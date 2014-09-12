@@ -13,6 +13,9 @@ public class FakeQuarter extends Quarter
     {
         GreenfootImage image = getImage() ;
         image.scale( 75, 75 ) ; 
+        isReal = false;     // set isReal to false, Fake Quarter
+        coinValue = 25;     
+        
     }
     
 }

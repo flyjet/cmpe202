@@ -12,7 +12,10 @@ public class Penny extends Coin
     public Penny()
     {
         GreenfootImage image = getImage() ;
-        image.scale( 50, 50 ) ;        
+        image.scale( 50, 50 ) ;  
+        isReal = true;
+        coinValue = 1;     //set value to 1;
+        
     }
     
 }

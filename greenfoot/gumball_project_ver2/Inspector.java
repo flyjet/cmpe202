@@ -12,6 +12,11 @@ public class Inspector extends Alien
      * Act - do whatever the Inspector wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    public void moveTo(int x, int y){
+        setLocation(x, y);
+    }
+        
     public void act() 
     {
         // Add your action code here.
