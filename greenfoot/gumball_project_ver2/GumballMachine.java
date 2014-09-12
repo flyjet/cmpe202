@@ -36,10 +36,11 @@ public class GumballMachine extends Actor
         }
                 
         if(Greenfoot.mousePressed(this)) {     //if mouse pressed
+
             if ( haveCoin == null){
                 setMessage("No Coin in Slot!");
             } else{
-                setMessage("Crank Turned!");
+                setMessage("Crank Turned!");   //if there is coin, Crank turned
                 Greenfoot.delay(100); 
   
                 moveInspector(533-80,291-40);   // select Inspector to inspect the coin
@@ -67,37 +68,37 @@ public class GumballMachine extends Actor
     
     private void insertCoin(Actor coin){        
         World world = getWorld();
-        world.removeObject( coin );  
+        world.removeObject( coin );          // the coin dispear  
     }
     
     public void moveInspector(int x, int y){
          Inspector inspector;         
          inspector = (Inspector)this.getOneIntersectingObject( Inspector.class );
-         inspector.moveTo(x,y);    //inspector move to gumball machine           
+         inspector.moveTo(x,y);              //inspector move to gumball machine           
     }
     
     public void checkCoin( Coin coin){
-        moveInspector(533,291);         // inspector move back 
+        moveInspector(533,291);              // inspector move back 
 
         if(coin.isReal()){                   //real coin
             if(coin.getValue() == 25){  
-                //check coin value is 25, then continue
+                //check coin value is 25, then continue 
                 setMessage("Real Quarter, please wait!");
                 selectPicker();              //Random select a picker                   
               
             }else if(coin.getValue() == 1){      //value is 1, it is penny     
                 
-                setMessage("Sorry, no enough coin!");
+                setMessage("Sorry, no enough coin!");   
             }     
         }else{                                  //fake quarter
             
-          setMessage("Sorry, the coin is Fake!");
+          setMessage("Sorry, the coin is Fake!");   
         }       
         
     }
     
     public void selectPicker(){
-         int pickerN =Greenfoot.getRandomNumber(2);
+         int pickerN =Greenfoot.getRandomNumber(2);    //get Random number to select the picker
          World world = getWorld();
          if (pickerN == 1){          //Green Picker
              List<Picker> pickers = world.getObjects(GreenPicker.class );  
@@ -105,20 +106,21 @@ public class GumballMachine extends Actor
              Greenfoot.delay(100);   
              setMessage("Green Picker");
              picker.moveTo( 669 -200, 456-60);      //picker move gumball machine
-             picker.pickBall();  
+             Greenfoot.delay(100);  
+             picker.pickBall();                     //pick green ball
              Greenfoot.delay(100);
-             picker.moveTo( 669 , 456 );              //picker move back
+             picker.moveTo( 669 , 456 );            //picker move back
                     
          }else{                      //Random Picker
             List<Picker> pickers = world.getObjects(RandomPicker.class );  
-            Picker picker =pickers.remove(0);
-            
+            Picker picker =pickers.remove(0);            
             Greenfoot.delay(100);   
             setMessage("Random Picker");
             picker.moveTo( 655 -200, 94 +60);      //picker move gumball machine
+            Greenfoot.delay(100);  
             picker.pickBall();    
-            Greenfoot.delay(100);
-            picker.moveTo( 655, 94);                 //picker move back
+            Greenfoot.delay(100);                  //pick random ball
+            picker.moveTo( 655, 94);               //picker move back
             
          }
         

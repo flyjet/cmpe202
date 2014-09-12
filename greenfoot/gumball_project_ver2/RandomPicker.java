@@ -24,13 +24,16 @@ public class RandomPicker extends Picker
         World world = getWorld();
         world.addObject(gb, 500, 500);
         
-       // setMessage (gb.getClass().getName());
+        String color = gb.getClass().getName();
+        Greenfoot.delay(100);  
+        setMessage("Select the random gumball is " +color);
         
     }
-    
-    
+       
     public void act() 
     {
-        // Add your action code here.
+        // Add your action code here.             
     }    
+    
+    
 }

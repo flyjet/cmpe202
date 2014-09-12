@@ -16,7 +16,11 @@ public class GreenPicker extends Picker
         World world = getWorld();
         Gumball gb = new GreenGumball();
         world.addObject(gb, 500, 500 );
-        //setMessage (gb.getClass().getName() );
+        
+        String color = gb.getClass().getName();
+        Greenfoot.delay(100);  
+        setMessage("Green picker only select " +color);
+
     }
         
     public void act() 
@@ -24,6 +28,5 @@ public class GreenPicker extends Picker
         // World world = getWorld();
          //world.removeObject(this);      //remove from the world
     }  
-    
-   
+       
 }

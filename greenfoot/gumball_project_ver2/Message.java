@@ -28,7 +28,7 @@ public class Message extends Actor
     {
         if(Greenfoot.mousePressed(this)){
             World world = getWorld();
-            world.removeObject(this);       //remove from the world
+            world.removeObject(this);           //remove from the world
         }
              
     }    

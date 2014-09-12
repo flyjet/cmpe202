@@ -22,5 +22,16 @@ public abstract class Picker extends Alien
     public void act() 
     {
         // Add your action code here.
-    }    
+    }   
+    
+   public void setMessage(String msg){
+         Message m = new Message();
+         int mouseX, mouseY ;
+         MouseInfo mouse = Greenfoot.getMouseInfo();  
+         mouseX=mouse.getX();  
+         mouseY=mouse.getY();  
+         World world = getWorld();
+         world.addObject(m, mouseX, mouseY);
+         m.setText( msg);    
+    }
 }

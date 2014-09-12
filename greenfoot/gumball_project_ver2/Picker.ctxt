@@ -6,4 +6,6 @@ comment1.params=x\ y
 comment1.target=void\ moveTo(int,\ int)
 comment2.params=
 comment2.target=void\ act()
-numComments=3
+comment3.params=msg
+comment3.target=void\ setMessage(java.lang.String)
+numComments=4
