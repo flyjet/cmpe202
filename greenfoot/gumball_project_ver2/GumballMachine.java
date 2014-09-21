@@ -92,7 +92,7 @@ public class GumballMachine extends Actor
             }     
         }else{                                  //fake quarter
             
-          setMessage("Sorry, the coin is Fake!");   
+          setMessage("Sorry, the coin is Fake Quarter!");   
         }       
         
     }
