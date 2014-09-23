@@ -51,7 +51,7 @@ public class NoEnoughCoinState implements State {
     public void turnCrank() {
        int n = gumballMachine.getCoins();
        if (n > 0){        //have coin in machine
-            System.out.println("You have coins of value " + gumballMachine.getCoins() + "in machine");
+            System.out.println("You have coins of value " + gumballMachine.getCoins() + " cents in machine");
             System.out.println("You turned, but there's no enough coins");
        } else{
            
